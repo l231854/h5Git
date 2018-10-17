@@ -14,5 +14,121 @@
     <p>&nbsp;&nbsp;内容<strong>加粗</strong><em>斜体</em><del>横线</del><span>文本</span></p>
     <!--&nbsp;空格-->
     <img src="image/image1.jpg" alt="图片1" title="鼠标放上去显示" width="100" height="100">
+    <a href="#end">猫点mid170</a>
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br>1
+    <br id="end">mind170
+
+    <a href="#">最顶上</a>
+    <!--br{$}*300-->
+    <!-- #region 表格-->
+    <table border="1">
+        <!-- #region 行<tr>-->
+        <!-- #region-colsoan-列数合并 rowspan-行数合并 -->
+            <tr>
+                <!--列<th> th*4 可以直接4个-->
+                <th>部门</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>工资</th>
+            </tr>
+            <tr>
+                <!--列<th> th*4 可以直接4个-->
+                <td rowspan="4">开发组</td>
+                <td>小明</td>
+                <td>男</td>
+                <td>10086</td>
+            </tr>
+            <tr>
+                <!--列<th> th*4 可以直接4个-->
+                <td>小刚</td>
+                <td>男</td>
+                <td>10087</td>
+            </tr>
+           <tr>
+                <!--列<th> th*4 可以直接4个-->
+                <td>小花</td>
+                <td>女</td>
+                <td>10089</td>
+            </tr>
+            <tr>
+                <!--列<th> th*4 可以直接4个-->
+                <td colspan="2">工资合计</td>
+                <td>30120</td>
+            </tr>
+    </table>
+    <!-- #region form 表单-->
+    <!-- 收集用户输入，发送 或者 提交给服务器
+    输入：内容
+    文本：普通 密码
+    单选框：
+    多选框：
+    下拉框：
+    提交：提交按钮
+    http:超文本传输协议 浏览器和服务器的通讯
+    模式：请求-应答 浏览器主动发起请求-服务器接收 -自身做处理-结果返回浏览器-浏览器根据返回结果显示 -->
+    <!--注册页面-->
+    <form action="" method="GET">
+        用户名：<input type="text" name="usr" id=""><br>
+        密码：<input type="password" name="pas" id=""><br>
+        <!-- 单选 -->
+        性别：<input type="radio" name="sex" value="1">男
+             <input type="radio" name="sex" value="2">女<br>
+        <!-- 复选框 -->
+        兴趣：<input type="checkbox" name="interest" value="1">看书
+             <input type="checkbox" name="interest" value="2">吃饭
+             <input type="checkbox" name="interest" value="3">打豆豆<br>
+        城市：<select name="city" id="">
+            <option value="SH">上海</option>
+            <option value="BJ">北京</option>
+        </select><br>
+        <input type="submit">
+    </form>
+    <!-- 布局 -->
+    <!-- 功能-小块-排列好-把具体内容填充到小块中
+    div-容器 -->
+    <!-- 布局会用到
+    1.div
+    2.table
+    3.frmaeset：管理后台 -->
+    <div style="background: yellow;height: 100px;">导航栏</div>
+    <div style="background: red;width: 20%; height: 100px;float: left;">菜单</div>
+    <div style="background: gray;width: 80%; height: 100px;float: left;">内容</div>
+
+    <!-- 嵌套规则 -->
+    <!-- 块元素：独立一行 可以设置宽高 默认高度100%
+        文字类块元素： p h1-h6
+        容器类块元素：div table tr td th form ul li ol dl dt dd 
+    行元素：不独立成一行，不可以设置宽高 由内容决定
+    a img input strong en del span
+    特殊字符：文字  br &nbsp-->
+    <!-- 嵌套规则
+    1.块元素可以嵌套行元素 -->
+    <div>这是div块元素 <a href="">这是a行元素</a></div>
+    <!-- 2.行元素可以嵌套行元素 -->
+    <a href="">这是a行元素<strong>这是strong行元素</strong></a>
+    <!-- 3.行元素不可以嵌套块元素
+    <a href=""><div></div></a>
+    4.文字类块元素不可以嵌套块元素
+    <p><div></div></p>
+    5.容器类块元素 可以嵌套块元素 -->
+    <div><div></div></div>
 </body>
 </html>

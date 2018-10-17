@@ -1,0 +1,56 @@
+/* 盒子
+所有的元素->矩形的盒子
+鞋盒装了鞋子 堆在一起
+内容 鞋子
+内边距 鞋盒和鞋子的距离
+盒子框 鞋盒 纸盒子
+外边距 鞋盒和鞋盒的距离 */
+
+.box1 {
+    /* 盒子框 */
+    border: 5px solid black;
+    /* 内边距 */
+    /* 上右下左 */
+    padding: 10px 20px 60px 40px;
+    /* 上右下左 */
+    margin: 10px 20px 60px 40px;
+    background: yellow;
+    
+}
+/* margin 重叠
+1.平级的元素 取最大值
+1.float 
+2.inline-block
+2.嵌套关系 
+border
+padding
+overflow(超出的会被裁切掉) */
+.box2 {
+    /* 盒子框 */
+    border: 5px solid red;
+    /* 内边距 */
+    /* padding: 10px; */
+}
+
+div {
+    width: 200px;
+    height: 200px;
+    border: 5px solid black;
+    float: left;
+    background: yellow;
+    /* 定位 */
+    position: fixed;
+   
+
+}
+.div1 {
+     /* 相对定位 默认相对父控件*/
+    position: relative;
+    top: 50px;
+    left: 100px;
+
+}
+.div2 {
+    /* 绝对定位 绑气球*/
+    position: absolute;
+}

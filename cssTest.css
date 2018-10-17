@@ -1,0 +1,184 @@
+
+/* 选择器
+4个大类
+基本选择器
+*通配符 标签div id选择器 class 
+组合
+属性
+伪元素 */
+
+/* 基本选择器优先级*<div<class<id(生效按高优先级 不按照顺序) */
+* {
+    /* 对所有生效 */
+   border: 1px solid black;
+}
+div {
+    /* 只有标签是div才会生效 */
+    color: red;
+    width: 100px;
+    height: 50px;
+    background: yellow!important;
+}
+#txt {
+    font-size: 60px;
+}
+div#test {
+    font-size: 60px;
+
+}
+/* class 选择器 */
+.test2 {
+    font-family: sans-serif;
+}
+/* class-css
+id-js */
+
+/* 编程：id-唯一性
+1.有且仅有一个
+2.每个都不一样
+css 
+1.一个元素只能有一个id
+2.不同元素id不能相同 */
+
+
+/* 外部和内部先合并，然后按照优先级（通优先级 按照外部） 
+内联样式有的已内联样式执行
+*/
+ /* 加了important 最后执行 */
+ 
+ /* 继承原则：嵌套里面的标签，拥有外部标签的某些属性 子元素可用继承父元素的的属性
+ 1.跟文字文本样式 可以被继承 其它不能 */
+ /* 2.块级元素：如果宽度不设置 会继承最接近的父元素的宽度 高度内容决定 */
+
+
+ /* 二：组合选择器
+ 把基本选择器，通过特殊符号串在一起
+ 1.分组选择器-div,p,ul */
+ div,p {
+     background: red;
+     color: gray;
+ }
+ /* 2.嵌套选择器
+ 把基本选择器空格隔开 */
+ /* p 是div的子级 div p ->p (div)*/
+div p{
+    background: red;
+    color: gray;
+}
+/* 3.子选择器
+div > p p (父标签是div) */
+div>p{
+    background: red;
+    color: gray;
+}
+/* 相邻的 同级别的选择器
+div+p -> p(div) */
+div+p{
+    background: red;
+    color: gray;
+}
+
+/* 三:属性选择器
+基本选择器[属性] 
+[属性=值]
+[属性~=值]-包含
+[属性^=值]-开始
+[属性$=值]-结束
+
+*/
+/* p[title]{
+    background: red;
+    color: gray;
+}
+p[title=123]{
+    background: red;
+    color: gray;
+}
+p[title~=123]{
+    background: red;
+    color: gray;
+} */
+
+/* 四：伪元素选择器
+伪元素：假的 ->真的(我们自己写的)
+每个标签系统都会自动假的开始和结束
+开始：before
+结束::after */
+/* p::before {
+    content: "p1的before";
+}
+p::after {
+    content: "p1的after"; 
+} */
+
+/* 块元素
+第一个字母 字：first-letter
+第一行：first-line */
+/* p::first-line
+{
+    color: goldenrod;
+} */
+/* p::first-letter
+{
+    color: black;
+} */
+
+/* 五：伪类 选择器
+状态 */
+
+/* 背景 */
+body {
+    /* background-color: red; */
+    background-image: url('image/image2.png');
+    /* 平铺 */
+    background-repeat: repeat-x;
+    background-position: 100px 150px;
+    /* x:left center right
+    y:top center bottom */
+    /* 背景图片固定 */
+    background-attachment: fixed;
+
+    /* 文字 字体 */
+    /* 尽量用英文中文可能乱码 */
+    font-family: "微软雅黑","Microsoft YaHei";
+    /* 默认是16px=1em */
+    font-size: 30px;
+    /* 100-900 细到粗  bold-normal-lighter*/
+    font-weight: bold;
+    /* italic-斜体 */
+    font-style: normal;
+    /* 行高 */
+    line-height: 60px;
+    /* 最少需要size和family */
+    /* font: style weight size/line-height 30px Microsoft YaHei */
+}
+
+/* 文字 */
+p {
+    color: red;
+    /* 字符间距 */
+    letter-spacing: 1px;
+    /* 空格的距离 */
+    word-spacing: 10px;
+    /* left to right   从左向右*/
+    direction: ltr;
+    /* 默认是none 横线 line-through-中 overline-上 underline-下*/
+    text-decoration: underline;
+    /* 文字的对齐方式 center-left-right-justify 两端对齐*/
+    text-align: justify;
+    /* 缩进 */
+    text-indent: 60px;
+    /* 英文大小写字母转换 uppercase-全大写 lowercase-全小写 capitalize-首字母大写*/
+    text-transform: capitalize;
+  
+
+}
+.test1 {
+    width: 140px;
+    /* 取消换行 */
+    white-space: nowrap;
+    overflow: hidden;
+    /* 省略号 */
+    text-overflow: ellipsis;
+
+}

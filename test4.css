@@ -1,0 +1,33 @@
+a {
+    color: red;
+
+}
+/* 伪类
+初始状态
+被访问
+鼠标移动
+点击 */
+
+a:link {
+    color: blue;
+
+}
+a:visited {
+    color: yellow;
+
+}
+a:hover {
+    color: red;
+}
+a:active {
+    color: green;
+
+}
+ul {
+    /* none-不使用项目符合
+    disc */
+    list-style-type: none;
+}
+li {
+    background-image: url("");
+}
