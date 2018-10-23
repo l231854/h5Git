@@ -1,0 +1,145 @@
+/* 1.城市互换
+ 改变定位，添加动画属性
+2.z轴旋转 transform:rotate(),
+  添加动画属性
+3.城市选取
+  由点击的元素决定，更改的城市应该添加到谁的身上。 */
+  body,ul,li{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+  }
+  body{
+      background: rgb(0, 0, 0,0.5);
+  }
+  .wrapper{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -250px;
+      margin-top: -200px;
+      width: 500px;
+      height: 400px;
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      /* margin: 0 auto; */
+  }
+  .main{
+      width: 500px;
+      height: 400px;
+  }
+  .main .main-img{
+      width: 100%;
+      height: 200px;
+      background: green;
+
+  }
+  .main .main-img .main-img-p{
+    display: inline-block;
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    margin-top: 50px;
+
+}
+  .content{
+      position: relative;
+      width: 100%;
+      height: 60px;
+      margin-top: 30px;
+      border-bottom: 1px solid #ccc;
+  }
+  .content span{
+      position: absolute;
+      display: inline-block;
+      width: 200px;
+      height: 60px;
+      text-align: center;
+      line-height: 60px;
+      font-size: 20px;
+    /* 动画 */
+      transition: left 0.3s;
+
+  }
+  .before:first-child{
+      left: 0;
+  }
+  .before:last-child{
+      left: 300px;
+  }
+  .after:first-child{
+      left: 300px;
+  }
+  .after:last-child{
+      left: 0;
+  }
+  .change{
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      margin-top: -15px;
+      margin-left: -15px;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      color: red;
+      transform: rotate(0deg);
+      transition: transform 0.3;
+      /* 更改层级 */
+      z-index: 10;
+  }
+  .change .change-p {
+      top: 50%;
+      display: inline-block;
+      color: red;
+      text-align: center;
+      font-size: 10px;
+      line-height: 10px;
+      margin-top: 10px;
+
+  }
+  .card{
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 500px;
+      height: 400px;
+      background: #fff;
+      border-radius: 20px;
+      transition: left 0.3s;
+      z-index: 100;
+  }
+  .card a {
+      display: inline-block;
+      margin: 20px 0 0 30px;
+      font-size: 12px;
+      text-decoration: none;
+      color: #ccc;
+  }
+  .hot-citys{
+      width: 100%;
+  }
+   header {
+      text-align: center;
+      margin: 30px;
+      font-size: 20px;
+  }
+  .citys {
+      width: 90%;
+      margin: 0 auto;
+  }
+  .citys li {
+      display: inline-block;
+      width: 15%;
+      height: 40px;
+      text-align: center;
+      line-height: 40px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin: 8px;
+  }
