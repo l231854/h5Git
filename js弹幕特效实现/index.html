@@ -1,0 +1,41 @@
+
+<!-- 1.所有页面元素放在div-equipment里面
+2.里面的内容都放在div-wrapper里面
+3.div-wrapper 里面分为 div-main 和div-send
+4.div-main 里面放1.视频video 和弹幕 span
+5.div-send 里面放input输入框和div发送按钮
+二 -js
+1.获取 发送按钮 并给他增加点击事件 
+2.获取input 获取输入框输入的值
+3.在点击发送按钮 和输入框输入点击enter 键后 调用发送方法
+4.发送方法需要判断输入的内容不能为空 和全为空格和tab键盘
+5.获取div-main 创建一个span存放弹幕 add到div-main里面
+6.通过控制span弹幕的style.left 让弹幕从右到左
+7.给每个span弹幕 绑定一个计时器 通过递减dom.offsetLeft 来实现弹幕滚动效果
+8.当弹幕滚出屏幕后 要clearInterval计时器 和removeChild 去除该弹幕
+9.div-main     overflow: hidden 效果不然弹幕会从div上面出来 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="equipment">
+        <div class="wrapper">
+            <div class="main">
+                <video src="img/jsShow.mp4" controls></video>
+                <!-- <span>哈哈哈</span> -->
+            </div>
+            <div class="send">
+                <input type="text" class="input" placeholder="请输入弹幕"><div class="btn">发送</div>
+            </div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>

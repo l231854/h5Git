@@ -1,0 +1,63 @@
+.body {
+    margin: 0;
+}
+.equipment {
+    position: relative;
+    width: 300px;
+    height: 594px;
+    background: #ccc;
+    margin: 50px auto;
+}
+.wrapper {
+    position: absolute;
+    left: 50%;
+    margin-left: -120px;
+    width: 240px;
+    height: 500px;
+}
+.main {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+.main video {
+    width: 100%;
+    height: 400px;;
+}
+.main span {
+    position: absolute;
+    /* top: 100px; */
+    /* left: 100px; */
+    /* color: #fff; */
+    /* font-size: 20px; */
+    /* 强制不换行 */
+    white-space: nowrap;
+}
+.send{
+    width: 100%;
+    height: 30px;
+    text-align: center;
+}
+.input {
+    width: 150px;
+    height: 30px;
+    border: 0;
+    padding: 0;
+    outline: none;
+    /* 文字向下对其 */
+    vertical-align: text-bottom;
+    /* 距离左边间隙 */
+    text-indent: 10px;
+    border-radius: 10px 0px 0px 10px;
+}
+.btn {
+    display: inline-block;
+    width: 80px;
+    height: 30px;
+    color: blue;
+    background: yellow;
+    text-align: center;
+    line-height: 30px;
+    vertical-align: text-bottom;
+    border-radius: 0 10px 10px 0;
+}
