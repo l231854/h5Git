@@ -1,0 +1,43 @@
+<!-- 1.创建div-container 放所有控件
+2.分为三部分1：div-main 存放轮播图片 2:小圆点 3:左右点击滑动的a标签
+3.写 左右滑动方法
+4.注意事项  1-给每个小圆点添加点击事件用闭包 立即执行函数 可以让点击的时候的index等于当前点击的
+2.移动函数 只能一次执行完了才能执行下一次 所以加个bolean控制
+3.鼠标放到轮播的时候清空计时器 鼠标移走才重新初始化计时器
+4.默认隐藏点击左右滑动的a标签 鼠标放到轮播上面才显示出来.container:hover .btn{ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <img src="img/5.jpeg" alt="">
+            <img src="img/1.png" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+            <img src="img/5.jpeg" alt="">
+            <img src="img/1.png" alt="">
+        </div>
+        <ul class="list">
+            <li class="active"></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <!-- javascript:; a标签不会链接 不写点击会刷新 -->
+        <a href="javascript:;"  id="prev" class="btn"><</a>
+        <a href="javascript:;" id="next" class="btn">></a>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>

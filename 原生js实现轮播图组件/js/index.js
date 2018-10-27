@@ -15,7 +15,6 @@ function slider(selector){
     // 初始化轮播图
     function init(){
         container = document.querySelector(selector)
-        console.log("container="+container);
         wrapper = container.querySelector(".slider-wrapper");
         slides = container.querySelectorAll(".slider-slide");
         buttons = container.querySelectorAll(".slider-btn");
@@ -42,7 +41,6 @@ function slider(selector){
     // 检测是否切出当前页面
     function visibilityChange(){
         window.addEventListener("visibilitychange",function(){
-            console.log(document.hidden);
             if(document.hidden){
                 clearTimeout(timer);
             }else{
@@ -53,7 +51,6 @@ function slider(selector){
     }
 
     function buttonClick(direction){
-        console.log(direction);
         if(!flag)
         {
             moveSlide(direction);
@@ -61,10 +58,9 @@ function slider(selector){
             autoplay();
         }
     }
-    // 响应试
+    // 响应试-页面放大缩小 tu p
     function resize(){
         window.addEventListener("resize",function(){
-            console.log("滑动");
             setwidth();
             wrapper.style.transitionDuration='0ms';
             moveWrappe();

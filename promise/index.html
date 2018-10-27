@@ -1,0 +1,82 @@
+<!-- Promise
+Future value
+ 一个事件
+回调函数管理器
+promise 信任机制
+1.只resolved一次
+2.不是成功就是失败
+3.值会传递
+4.一旦resolved 就不会改变
+
+流程控制
+链式调用 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fakeAjax(url,cb){
+            var response = {
+                'file1':"文件1",
+                'file2':"文件2",
+                'file3':"文件3",
+            }
+            var random = Math.random() * 4000 + 1000;
+            setTimeout(function(){
+                cb(response[url])
+            },random);
+        }
+        function output(text){
+            console.log(text);
+        }
+        // fakeAjax('file2',function(value){
+        //         console.log(value);
+        // });
+        function getFile(file){
+            // fakeAjax(file,output);
+            return new Promise(function(resolve){
+                fakeAjax(file,function(text){
+                    resolve(text);
+                });
+            });
+        }
+        // var p1=getFile('file1');
+        // var p2=getFile('file2');
+        // var p3=getFile('file3');
+
+        // // 我们要顺序获取
+        // p1.then(function(text){
+        //     output(text);
+        // }).then(function(){
+        //     return p2;
+        // }).then(function(text){
+        //     output(text);
+        // }).then(function(){
+        //     return p3;
+        // }).then(function(text){
+        //     output(text);
+        // })
+        // ['file1','file2','file3'].map(getFile)
+        // .reduce(function(initPr,pr){
+        //    return initPr
+        //           .then(function(){
+        //               return pr;
+        //            })
+        //            .then(output);
+        // },Promise.resolve());
+        var arr = [1,2,3];
+        arr.reduce(function(obj,item){
+            obj[item] = true;
+            console.log(obj);
+            return obj;
+        },{});
+        
+    </script>
+    
+</body>
+</html>

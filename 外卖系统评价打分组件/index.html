@@ -1,0 +1,40 @@
+<!-- 1.创建一个div-all
+2.创建一个div-content 用来放写的控件
+3.分为1-title div- title 2 评分div-rater；
+4.创建一个函数用来渲染评分组件 已经各种交互方法function reater(options)
+5.创建评分组件函数的参数为对象 对象含有参数为// 参数
+// Element: dom 当前想把什么变成评分组件
+// max:Number 当前有多少颗星星
+// starSize:NUmber 星星的大小
+// showTip:boolean 是否显示tip
+// step : Number 0-1小数 0.3
+// rating : 默认是几颗星星
+// option 是一个对象
+
+6.如果传的参数为空或者没传 给默认值 参数校验
+7.获取document.getElementById("rater") 存放组件的div
+8.然后在组件里面add("star-rating") 添加 没选择的时候的五角星并且赋值style
+9.创建一个新的div add("star-value") 是选中时候的五角星并且赋值style
+10.给组件添加点击事件 1.mousemove 鼠标滑动的几颗星的时候 几颗星就变为选中状态
+2.mouseleave 鼠标离开的时候 变为以前点击的几颗星状态
+3.click  鼠标点击的时候 记录点击了几颗星  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="all">
+        <div class="content">
+            <div class="title">star rating</div>
+            <div id="rater"></div>
+        </div>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>

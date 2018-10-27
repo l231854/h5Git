@@ -1,0 +1,76 @@
+body, ul, li, a{
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   /* 取消a标签的下划线 */
+   text-decoration: none;
+
+}
+.container{
+    position: relative;
+    width: 520px;
+    height: 280px;
+    border: 10px solid #000;
+    margin: 100px auto;
+    /* 两边超出的隐藏去掉 */
+    overflow: hidden;
+}
+.main {
+    position: absolute;
+    /* -520是因为最左边加了一个最后一张图 */
+    left: -520px;
+    /* 图片个数+2（最后一张和第一张）*num */
+    width: 3640px;
+    height: 280px;
+    font-size: 0;
+}
+.list{
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -35px;
+    font-size: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 7px;
+    /* margin: 0 auto; */
+}
+.list li {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    margin: 3px;
+    /* 放上去的小手 */
+    cursor: pointer;
+
+}
+.list .active{
+    background: orangered;
+}
+.btn {
+    /* 一开始不显示 鼠标放上去才会出现 */
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.3);
+    /* 水平剧中 */
+    text-align: center;
+    /* 垂直剧中 */
+    line-height: 40px;
+}
+.container:hover .btn{
+    /* 鼠标放到container  btn 的display */
+    display: inline-block;
+}
+#prev{
+    left: 0;
+
+}
+#next{
+    right: 0;
+}

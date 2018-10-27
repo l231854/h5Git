@@ -1,0 +1,51 @@
+<!-- 1.第一个动画通过改变透明度
+2.第二个动画改变height
+3.第三个动画通过transform: translateY(0) 改变y
+4.第四个动画 画出圆弧 找到中心点transform-origin 围绕中心点transform: rotate(0)
+5.第五个动画 先画一个原 然后执行第四个动画 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="item item1">
+            <svg  id="style1" xmlns="http://www.w3.org/2000/svg">
+                <rect class="rect1" x="0" y="0" width="4" height="20" fill="#ff6700"></rect>
+                <rect class="rect2" x="7" y="0" width="4" height="20"></rect>
+                <rect class="rect3" x="14" y="0" width="4" height="20"></rect>
+            </svg>
+        </div>
+        <div class="item item2">
+            <svg  id="style2" xmlns="http://www.w3.org/2000/svg">
+                <rect class="rect1" x="0" y="0" width="4" height="20" fill="#ff6700"></rect>
+                <rect class="rect2" x="7" y="0" width="4" height="20"></rect>
+                <rect class="rect3" x="14" y="0" width="4" height="20"></rect>
+            </svg>
+        </div>
+        <div class="item item3">
+            <svg  id="style3" xmlns="http://www.w3.org/2000/svg">
+                <rect class="rect1" x="0" y="0" width="4" height="10" fill="#ff6700"></rect>
+                <rect class="rect2" x="7" y="0" width="4" height="10"></rect>
+                <rect class="rect3" x="14" y="0" width="4" height="10"></rect>
+            </svg>
+        </div>
+        <div class="item item4">
+            <svg  id="style4" xmlns="http://www.w3.org/2000/svg">
+                <path d="M 5 20 A 15 15 0 0 1 20 5"></path>
+            </svg>
+        </div>
+        <div class="item item5">
+            <svg  id="style5" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="20" cy="20" r="15"></circle>
+                <path d="M 5 20 A 15 15 0 0 1 20 5"></path>
+            </svg>
+        </div>
+    </div>
+</body>
+</html>
