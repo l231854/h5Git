@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- <style>
+        /* ~兄弟元素 */
+        /* .label1 ~ .p1{
+            color: red;
+        } */
+        input {
+            display: none;
+        }
+        #input1:checked{
+            width: 50px;
+            height: 50px;
+        }
+        #input1:checked ~ .p1{
+            color: red;
+        }
+        #input1:hover ~ .p1{
+            color: red;
+        }
+    </style> -->
+</head>
+<body>
+    <!-- radio 的name 相同会是单选框 因为点击的时候史name=btn&vale=1 -->
+    <!-- <input type="radio" name="btn" value="1" id="input1"> -->
+    <!-- 添加你想关联的id元素值 -->
+    <!-- <label for="input1" class="label1">label</label>
+    <input type="radio" name="btn" value="2" id="input2"> -->
+    <!-- 添加你想关联的id元素值 -->
+    <!-- <label for="input2" class="label2">label2</label> -->
+
+    <!-- <p class="p1">p1</p>
+    <p class="p2">p2</p> -->
+    <div class="wrapper">
+        <input type="radio" name="btn" id="btn1" checked>
+        <input type="radio" name="btn" id="btn2">
+        <input type="radio" name="btn" id="btn3">
+        <input type="radio" name="btn" id="btn4">
+        <div class="list">
+            <label for="btn1">
+                <div class="p">
+                    <img src="img/1.png" alt="">
+                </div>
+                <div class="d">
+                    <p class="title">我是标题</p>
+                    <p class="des">我是内容</p>
+                </div>
+            </label>
+            <label for="btn2">
+                <div class="p">
+                    <img src="img/2.jpg" alt="">
+                </div>
+                <div class="d">
+                    <p class="title">我是标题</p>
+                    <p class="des">我是内容</p>
+                </div>
+            </label>
+            <label for="btn3">
+                <div class="p">
+                    <img src="img/3.jpg" alt="">
+                </div>
+                <div class="d">
+                    <p class="title">我是标题</p>
+                    <p class="des">我是内容</p>
+                </div>
+            </label>
+            <label for="btn4">
+                <div class="p">
+                    <img src="img/4.jpg" alt="">
+                </div>
+                <div class="d">
+                    <p class="title">我是标题</p>
+                    <p class="des">我是内容</p>
+                </div>
+            </label>
+        </div>
+        <div class="img-box">
+            <img src="img/1.png" alt="">
+            <img src="img/2.jpg" alt="">
+            <img src="img/3.jpg" alt="">
+            <img src="img/4.jpg" alt="">
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+body, ul, li, p{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.wrapper{
+    position: relative;
+    width: 520px;
+    height: 280px;
+    margin: 0 auto;
+    border: 3px solid #000;
+
+}
+.wrapper input{
+    display: none;
+}
+.list{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.list label{
+    display: block;
+    width: 230px;
+    height: 70px;
+    padding-left: 20px;
+}
+
+.list .p{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    margin-top: 12px;
+}
+.list .p img{
+    width: 100%;
+    height: 100%;
+}
+.list .d{
+    display: inline-block;
+    /* 块级元素上对齐 */
+    vertical-align: top;
+    margin-top: 12px;
+
+}
+.list .d p{
+    font-size: 14px;
+    color: #fff;
+
+}
+.img-box img{
+    display: none;
+}
+#btn1:checked ~ .img-box img:nth-child(1){
+    display: block;
+}
+#btn2:checked ~ .img-box img:nth-child(2){
+    display: block;
+}
+#btn3:checked ~ .img-box img:nth-child(3){
+    display: block;
+}
+#btn4:checked ~ .img-box img:nth-child(4){
+    display: block;
+}
+

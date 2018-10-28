@@ -1,0 +1,133 @@
+<!-- js手写前端模版引擎
+前端的发展史
+html 静态页面 动态页面
+
+动态页面 php+html asp+html jsp+ html  
+后台的模版引擎 mvc
+前端 js v8 前端数据渲染 后台 api服务器
+前端 动态拼接字符串 innerHTML
+UI html -- js html
+前端模版引擎 维护成本很高
+模式 vue mvvm 模式 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/underscore.js"></script>
+</head>
+<body>
+    <!-- 用户信息列表 -->
+    <!-- 视图层 -->
+    <ul id="user_list">
+        <li><a href=""></a></li>
+       <!-- <li>
+           <a href="luwei.com"luwei></a>
+       </li>
+       <li>
+           <a href="cc.com">cc</a>
+       </li>
+       <li>
+           <a href="ice.com">ice</a>
+       </li> -->
+    </ul>
+    <!-- type="text/html" 不是js -->
+    <script type="text/html" id="teml">
+        <% for(var i=0;i<users.length;i++){ %>
+            <li>
+                <a href="<%=users[i].url%>"><%=users[i].name%></a>
+            </li>
+        <%} %>
+    </script>
+    <script>
+        // 数据层
+        var data = {
+            users: [
+                {name:"luwei",url:"luwei.com"},
+                {name:"cc",url:"cc.com"},
+                {name:"ice",url:"ice.com"},
+            ]
+        }
+        var container = document.getElementById("user_list");
+        var precom = _.template(document.getElementById("teml").innerHTML);
+        var html = precom(data);
+        var users = [
+                {name:"luwei",url:"luwei.com"},
+                {name:"cc",url:"cc.com"},
+                {name:"ice",url:"ice.com"},
+            ]
+        // container.innerHTML=html;
+        // 编译模版
+        // <% for(var i=0;i<users.length;i++){ %>
+        //     <li>
+        //         <a href="<%=users[i].url%>"><%=users[i].name%></a>
+        //     </li>
+        // <%} %>
+        // jequery 作者08年
+        // 规则 %>变成 p.push('
+        // <%=xxx%>变成');p.push(xxx);p.push('
+        // <% 变成');
+        // function template(teml,data){
+        //     teml = document.getElementById(teml).innerHTML;
+        //     // replace(/[\r\t\n]/g,"")把控股换行等替换成""空字符串 .*匹配任意字符?不贪婪匹配
+        //     var string = "var p = [];p.push('"+
+        //     teml.replace(/[\r\t\n]/g,"")
+        //     .replace(/<%=(.*?)%>/g,"');p.push($1);p.push('")
+        //     .replace(/<%/g,"');")
+        //     .replace(/%>/g,"p.push('")+
+        //     "');"
+        //     // eval(string); 字符串变成js执行代码
+        //     eval(string);
+        //     console.log(p);
+        //     return p.join("");
+
+        // }
+        function template(teml,data){
+            teml = document.getElementById(teml).innerHTML;
+            // replace(/[\r\t\n]/g,"")把控股换行等替换成""空字符串 .*匹配任意字符?不贪婪匹配
+            var fn = new Function("var p = [];p.push('"+
+            teml.replace(/[\r\t\n]/g,"")
+            .replace(/<%=(.*?)%>/g,"');p.push($1);p.push('")
+            .replace(/<%/g,"');")
+            .replace(/%>/g,"p.push('")+
+            "');return p.join('')");
+            // eval(string); 字符串变成js执行代码
+            console.log(fn());
+            return fn();
+
+        }
+
+        container.innerHTML = template("teml",users);
+        var fn = new Function ("a","b","console.log(a+b)");
+        console.log(fn(1,2));
+        
+        var p = [];
+        for(var i =0; i<users.length;i++){
+            // 看到<%= 就分段
+            p.push('<li><a href="');
+            p.push(users[i].url);
+            p.push('">');
+            p.push(users[i].name);
+            p.push('</a></li>');
+
+        }
+        // console.log(p);
+        // p.join()-数组拼接成字符串方法
+        // container.innerHTML = p.join("");
+
+        // var container = document.getElementById("user_list");
+        // var html = "";
+        // // 视图层的代码 项目很难维护 html + CSS + JS
+        // // 模版引擎就是把视图层的和数据层的东西分开 好维护
+        // for(var i=0;i<data.users.length;i++){
+        //     // 不去用es6模版字符串
+        //     html +="<li>" + "<a href="+data.users[i].url+">"+data.users[i].name+"</a>"+"</li>";
+        // }
+        // container.innerHTML=html;
+    
+    </script>
+</body>
+</html>
